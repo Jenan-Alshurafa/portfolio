@@ -3,7 +3,9 @@
 
 <head>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/inter.js"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Jenan portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +13,37 @@
 </head>
 
 <body>
+
+<nav class="top-nav">
+    <div class="top-nav-inner">
+        <span class="top-nav-logo">Jenan</span>
+        <ul class="top-nav-links">
+            <li><a href="#hero">Home</a></li> 
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>         
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
     <div class="animated-bg"></div>
     <div class="animated-bg layer2"></div>
 
-<section class="hero">
+
+<nav class="floating-nav" id="floating-nav">
+    <button data-target="hero">👤</button>
+    <button data-target="skills">💻</button>
+    <button data-target="projects">📁</button>
+    <button data-target="footer">✉️</button>
+</nav>
+
+
+<section class="hero" id="hero">
     <aside class="card-shape" aria-label="Profile summary">
         <div class="profile-photo-wrap">
-            <img class="profile-photo" src="../images/projecticon.png" alt="Jenan" width="120" height="120" />
+            <img class="profile-photo" src="../images/jenicon.png" alt="Jenan" width="120" height="120" />
         </div>
         <h2>Jenan</h2>
         <h3>Full-stack developer</h3>
@@ -27,7 +53,7 @@
                 <span class="contact-icon" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
                 </span>
-                <a href="mailto:JenanAlshuirafa@gmail.com">JenanAlshuirafa@gmail.com</a>
+                <a href="mailto:JenanAlshuirafa@gmail.com">JenanAlshurafa@gmail.com</a>
             </li>
             <li>
                 <span class="contact-icon" aria-hidden="true">
@@ -54,12 +80,12 @@
         </span>+966 55 608 1022</p>
 
         <div class="card-skills">
-            <span>Flutter &amp; Dart</span>
-            <span>HTML</span>
-            <span>CSS</span>
+             <span>Software Development</span>
+            <span>Mobile Apps</span>
+            <span>Web</span>
         </div>
 
-        <a class="cv-btn" href="#" download aria-label="Download CV">
+        <a class="cv-btn" href="../images/JenanAlshurafaDeveloperCV.pdf" download aria-label="Download CV">
             <span class="cv-btn__text">Download CV</span>
             <svg class="cv-btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         </a>
@@ -89,7 +115,7 @@
 
         <div class="skills-cards">
             <article class="skills-panel" aria-labelledby="skills-lang-heading">
-                <h3 id="skills-lang-heading" class="skills-panel-title">languages</h3>
+                <h3 id="skills-lang-heading" class="skills-panel-title">Languages</h3>
                 <div class="skills-icons-grid" aria-label="Languages icons">
                     <img src="../images/dart1.png" alt="Dart" class="skills-lang-icon" loading="lazy" />
                     <img src="../images/html.png" alt="HTML" class="skills-lang-icon" loading="lazy" />
@@ -102,7 +128,7 @@
             </article>
 
                 <article class="skills-panel" aria-labelledby="skills-tools-heading">
-                    <h3 id="skills-tools-heading" class="skills-panel-title">tools</h3>
+                    <h3 id="skills-tools-heading" class="skills-panel-title">Tools</h3>
                     <div class="skills-icons-grid" aria-label="Tools icons">
                         <img src="../images/vsc.png" alt="Visual Studio Code" class="skills-lang-icon" loading="lazy" />
                         <img src="../images/vs.png" alt="Visual Studio 2022" class="skills-lang-icon" loading="lazy" />
@@ -112,7 +138,7 @@
                     </div>
                 </article>
             <article class="skills-panel" aria-labelledby="skills-fw-heading">
-                <h3 id="skills-fw-heading" class="skills-panel-title">frameworks</h3>
+                <h3 id="skills-fw-heading" class="skills-panel-title">Frameworks</h3>
                 <div class="skills-icons-grid" aria-label="Frameworks icons">
                     <img src="../images/flutter.png" alt="Flutter" class="skills-lang-icon" loading="lazy" />
                     <img src="../images/net.png" alt=".NET" class="skills-lang-icon" loading="lazy" />
@@ -134,43 +160,48 @@
     <h2>Projects</h2>
     <div class="projects-grid">
         <!-- Project Card 1 -->
-        <article class="project-card">
-            <img src="..\images\projecticon.png" alt="Project 1 preview" />
-            <h3>Project Title</h3>
+       <article class="project-card">
+    <div class="img-wrapper">
+        <img src="..\images\icecreamapp.png" alt="Ice Cream App preview" />
+        <div class="img-title"></div>
+    </div>
+    <h3>Scoop - Ice cream Ordering App</h3>
+  
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
-                interdum urna quis magna lobortis, eget finibus urna vestibulum.
+                Flutter & Dart app for browsing and ordering ice cream — with a warm pastel UI, category browsing, interactive cart, and smooth checkout.
             </p>
             <div class="tech-stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>React</span>
+                <span>Mobile Application</span>
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>C++</span>
             </div>
             <div class="project-links">
-                <a href="https://github.com/yourusername/project-1" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://your-live-demo-link.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href="https://github.com/Jenan-Alshurafa/icecream-ordering-app" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://jenan-alshurafa.github.io/icecream-ordering-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
             </div>
         </article>
 
 
 <!-- Project Card 2 -->
-        <article class="project-card">
-            <img src="..\images\projecticon.png" alt="Project 1 preview" />
-            <h3>Project Title</h3>
+       <article class="project-card">
+    <div class="img-wrapper">
+        <img src="..\images\earth.jpg" alt="Weather App preview" />
+        <div class="img-title"></div>
+    </div>
+            <h3>Worldwide Weather App</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
-                interdum urna quis magna lobortis, eget finibus urna vestibulum.
+                A simple and clean Weather Application built with Flutter, designed as a learning-focused project to understand API integration, asynchronous data handling, and dynamic UI updates.
             </p>
             <div class="tech-stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>React</span>
+                <span>Mobile Application</span>
+                  <span>Flutter</span>
+                <span>Dart</span>
+                <span>C++</span>
             </div>
             <div class="project-links">
-                <a href="https://github.com/yourusername/project-1" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://your-live-demo-link.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href="https://github.com/Jenan-Alshurafa/Weather-app" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://jenan-alshurafa.github.io/Weather-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
             </div>
         </article>
 
@@ -179,17 +210,20 @@
 
 <!-- Project Card 3 -->
         <article class="project-card">
-            <img src="..\images\projecticon.png" alt="Project 1 preview" />
-            <h3>Project Title</h3>
+    <div class="img-wrapper">
+        <img src="..\images\login.png" alt="Weather App preview" />
+        <div class="img-title"></div>
+    </div>
+     <h3>Interactive WebPage Login\Signup</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
-                interdum urna quis magna lobortis, eget finibus urna vestibulum.
+                A interactive sign up and log in page that welcomes you after registering, linked with firebase for verifying username and email
             </p>
             <div class="tech-stack">
+                <span>Web Application</span>
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
-                <span>React</span>
+                <span>Firebase</span>
             </div>
             <div class="project-links">
                 <a href="https://github.com/yourusername/project-1" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -198,29 +232,10 @@
         </article>
 
 
-<!-- Project Card 4 -->
-        <article class="project-card">
-            <img src="..\images\projecticon.png" alt="Project 1 preview" />
-            <h3>Project Title</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
-                interdum urna quis magna lobortis, eget finibus urna vestibulum.
-            </p>
-            <div class="tech-stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>React</span>
-            </div>
-            <div class="project-links">
-                <a href="https://github.com/yourusername/project-1" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://your-live-demo-link.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
-            </div>
-        </article>
 
     </div>
 </section>
-<footer class="footer-contact">
+<footer class="footer-contact" id="footer">
     <p>Contact me</p>
     <div class="footer-icons">
         <a href="https://github.com/Jenan-Alshurafa" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -240,5 +255,6 @@
         </a>
     </div>
 </footer>
+ <script src="../js/inter.js"></script>
 </body>
 </html>
