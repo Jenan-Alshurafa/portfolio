@@ -1,7 +1,34 @@
 
+// Typewriter effect for  intro tagline
+
+function typeWriter(element, text, delay = 80) {
+    return new Promise(resolve => {
+        let i = 0;
+        const interval = setInterval(() => {
+            element.textContent += text[i];
+            i++;
+            if (i >= text.length) {
+                clearInterval(interval);
+                resolve();
+            }
+        }, delay);
+    });
+}
+
+async function startTyping() {
+    const line1 = document.getElementById('typed-line');
+    const line2 = document.getElementById('typed-line2');
+
+    await new Promise(r => setTimeout(r, 400));  
+    await typeWriter(line1, "I'm Jenan,");
+    await new Promise(r => setTimeout(r, 200));  
+    await typeWriter(line2, 'Full-Stack Developer');
+}
+
+startTyping();
 
 
-const lines = ['Hey', "I'm Jenan,", 'Full-Stack Developer'];
+
 
 // background gradient scroll effect
 const root = document.documentElement;
@@ -54,8 +81,6 @@ document.querySelectorAll('.tech-stack span').forEach(tag => {
     });
 });
 
-
-//skills icons animation
 // Tilt effect
 document.querySelectorAll('.skills-panel').forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -69,16 +94,16 @@ document.querySelectorAll('.skills-panel').forEach(card => {
         card.style.transform = '';
         card.style.boxShadow = '';
     });
-});
+});   // ← tilt effect ends here
 
 // Animate icons in on scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.skills-lang-icon').forEach((icon, i) => {
+            entry.target.querySelectorAll('.skill-item .skills-lang-icon').forEach((icon, i) => {
                 setTimeout(() => {
                     icon.style.opacity = '1';
-                    icon.style.transform = 'translateY(0)';
+                    icon.style.transform = '';
                 }, i * 100);
             });
         }
@@ -86,3 +111,22 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.skills-panel').forEach(card => observer.observe(card));
+
+// floating nav on scroll
+let lastScrollY = window.scrollY;
+let navOffset = 0;
+const nav = document.getElementById('floating-nav');
+const maxShift = 40; // how far it drifts 
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+
+    // drift in scroll direction, clamped to maxShift
+    navOffset += delta * 0.3;
+    navOffset = Math.max(-maxShift, Math.min(maxShift, navOffset));
+
+    nav.style.transform = `translateY(calc(-50% + ${navOffset}px))`;
+
+    lastScrollY = currentScrollY;
+});

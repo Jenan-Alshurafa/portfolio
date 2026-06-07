@@ -20,8 +20,9 @@
         <ul class="top-nav-links">
             <li><a href="#hero">Home</a></li> 
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>         
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>   
+            <li><a href="#experience">Experience</a></li>      
+            <li><a href="#footer">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -33,10 +34,11 @@
 
 
 <nav class="floating-nav" id="floating-nav">
-    <button data-target="hero">👤</button>
-    <button data-target="skills">💻</button>
-    <button data-target="projects">📁</button>
-    <button data-target="footer">✉️</button>
+    <button data-target="hero"><img src="../images/user.png" alt="User"></button>
+    <button data-target="skills"><img src="../images/skills.png" alt="Skills"></button>
+    <button data-target="projects"><img src="../images/projects.png" alt="Projects"></button>
+    <button data-target="experience"><img src="../images/expe.png" alt="Experience"></button>
+    <button data-target="footer"><img src="../images/contact.png" alt="Contact"></button>
 </nav>
 
 
@@ -90,13 +92,12 @@
             <svg class="cv-btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         </a>
     </aside>
-
-    <div class="hero-content">
-        <h1 class="hero-tagline">
-            <span class="hero-tagline-line">Hey</span>
-            <span class="hero-tagline-line">I&rsquo;m Jenan,</span>
-            <span class="hero-tagline-line">Full-Stack Developer</span>
-        </h1>
+<div class="hero-content">
+  <h1 class="hero-tagline">
+    <span class="hero-tagline-line">Hey</span>
+    <span class="hero-tagline-line" id="typed-line"></span>
+    <span class="hero-tagline-line" id="typed-line2"></span>
+</h1>
         <p class="hero-lead">Junior mobile application developer with hands-on experience in Flutter and Dart, focused on building clean,
         user-friendly mobile applications. Experienced in consuming REST APIs, front-end development, and translating UI designs
         into functional apps. Strong foundation in programming principles and eager to grow as a cross-platform developer.</p>
@@ -117,39 +118,81 @@
             <article class="skills-panel" aria-labelledby="skills-lang-heading">
                 <h3 id="skills-lang-heading" class="skills-panel-title">Languages</h3>
                 <div class="skills-icons-grid" aria-label="Languages icons">
+                    <div class="skill-item">
                     <img src="../images/dart1.png" alt="Dart" class="skills-lang-icon" loading="lazy" />
+                     <span class="skill-name">Dart</span></div>
+                     <div class="skill-item">
                     <img src="../images/html.png" alt="HTML" class="skills-lang-icon" loading="lazy" />
+                    <span class="skill-name">HTML</span></div>
+                     <div class="skill-item">
                     <img src="../images/ccs.png" alt="CSS" class="skills-lang-icon" loading="lazy" />
+                    <span class="skill-name">CSS</span></div>
+                    <div class="skill-item">
                     <img src="../images/java.png" alt="Java" class="skills-lang-icon" loading="lazy" />
+                    <span class="skill-name">Java</span></div>
+                    <div class="skill-item">
                     <img src="../images/swift.jpg" alt="Swift" class="skills-lang-icon" loading="lazy" />
+                    <span class="skill-name">Swift</span></div>
+                    <div class="skill-item">    
                     <img src="../images/sql.png" alt="SQL" class="skills-lang-icon" loading="lazy" />
+                    <span class="skill-name">SQL</span></div>
+                     <div class="skill-item">
                     <img src="../images/xml.png" alt="XML" class="skills-lang-icon" loading="lazy" />
+                    <span class="skill-name">XML</span></div>
+                     
                 </div>
             </article>
 
                 <article class="skills-panel" aria-labelledby="skills-tools-heading">
                     <h3 id="skills-tools-heading" class="skills-panel-title">Tools</h3>
-                    <div class="skills-icons-grid" aria-label="Tools icons">
-                        <img src="../images/vsc.png" alt="Visual Studio Code" class="skills-lang-icon" loading="lazy" />
-                        <img src="../images/vs.png" alt="Visual Studio 2022" class="skills-lang-icon" loading="lazy" />
-                        <img src="../images/AndroidStudio.webp" alt="Android Studio" class="skills-lang-icon" loading="lazy" />
-                        <img src="../images/github.png" alt="Git and GitHub" class="skills-lang-icon" loading="lazy" />
-                        <img src="../images/xcode.png" alt="Xcode" class="skills-lang-icon" loading="lazy" />
-                    </div>
+                   <div class="skills-icons-grid" aria-label="Tools icons">
+    <div class="skill-item">
+        <img src="../images/vsc.png" alt="Visual Studio Code" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">VS Code</span>
+    </div>
+    <div class="skill-item">
+        <img src="../images/vs.png" alt="Visual Studio 2022" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">VS 2022</span>
+    </div>
+    <div class="skill-item">
+        <img src="../images/AndroidStudio.webp" alt="Android Studio" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">Android Studio</span>
+    </div>
+    <div class="skill-item">
+        <img src="../images/github.png" alt="Git and GitHub" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">GitHub</span>
+    </div>
+    <div class="skill-item">
+        <img src="../images/xcode.png" alt="Xcode" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">Xcode</span>
+    </div>
+</div>
                 </article>
             <article class="skills-panel" aria-labelledby="skills-fw-heading">
                 <h3 id="skills-fw-heading" class="skills-panel-title">Frameworks</h3>
                 <div class="skills-icons-grid" aria-label="Frameworks icons">
-                    <img src="../images/flutter.png" alt="Flutter" class="skills-lang-icon" loading="lazy" />
-                    <img src="../images/net.png" alt=".NET" class="skills-lang-icon" loading="lazy" />
-                </div>
+    <div class="skill-item">
+        <img src="../images/flutter.png" alt="Flutter" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">Flutter</span>
+    </div>
+    <div class="skill-item">
+        <img src="../images/net.png" alt=".NET" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">.NET</span>
+    </div>
+</div>
                 </article>
                <article class="skills-panel" aria-labelledby="skills-tools-heading">
                     <h3 id="skills-tools-heading" class="skills-panel-title">Databases</h3>
                     <div class="skills-icons-grid" aria-label="Tools icons">
-                        <img src="../images/firebase.png" alt="FireBase" class="skills-lang-icon" loading="lazy" />
-                        <img src="../images/oracledatabase.png" alt="Oracle Database" class="skills-lang-icon" loading="lazy" />
-                    </div>
+    <div class="skill-item">
+        <img src="../images/firebase.png" alt="FireBase" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">Firebase</span>
+    </div>
+    <div class="skill-item">
+        <img src="../images/oracledatabase.png" alt="Oracle Database" class="skills-lang-icon" loading="lazy" />
+        <span class="skill-name">Oracle DB</span>
+    </div>
+</div>
                 </article>
         </div>
     </div>
@@ -226,15 +269,51 @@
                 <span>Firebase</span>
             </div>
             <div class="project-links">
-                <a href="https://github.com/yourusername/project-1" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://your-live-demo-link.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href="https://github.com/Jenan-Alshurafa/signup-login" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://jenan-alshurafa.github.io/signup-login/" target="_blank" rel="noopener noreferrer">Live Demo</a>
             </div>
         </article>
 
-
-
     </div>
 </section>
+
+
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-card">
+        <div class="experience-header">
+            <div>
+                <h3>Team Leader · Co-op Training</h3>
+                <p class="experience-company">Central Communication Center</p>
+            </div>
+            <span class="experience-date">6 months</span>
+        </div>
+
+        <p class="experience-desc">
+            Led a team of 8 to design and build a university facilities management 
+            and assets system from scratch — covering the full project lifecycle from 
+            planning to delivery.
+        </p>
+
+        <ul class="experience-details">
+            <li>Managed task distribution and team coordination using project management tools</li>
+            <li>Designed the UI/UX in Figma before development</li>
+            <li>Built the web system using HTML, CSS and JavaScript</li>
+            <li>Assigned and tracked missions for all 8 team members throughout the project</li>
+        </ul>
+
+        <div class="experience-tags">
+            <span>Team Leader</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Figma</span>
+            <span>Project Management</span>
+        </div>
+    </div>
+</section>
+
+
 <footer class="footer-contact" id="footer">
     <p>Contact me</p>
     <div class="footer-icons">
